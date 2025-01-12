@@ -15,7 +15,6 @@ public class SoundManager : MonoBehaviour
 
     public AudioMixer masterMixer;
 
-
     private void Start()
     {
         MusicVolumeChanged(musicVolume.value);
@@ -27,12 +26,12 @@ public class SoundManager : MonoBehaviour
 
     public void MusicVolumeChanged(float volume)
     {
-        masterMixer.SetFloat(strMusic, volume * 100 - 80f);
+        masterMixer.SetFloat(strMusic, volume);
     }
 
     public void EffectsVolumeChanged(float volume)
     {
-        masterMixer.SetFloat(strEffects, volume * 100 - 80f);
+        masterMixer.SetFloat(strEffects, volume);
     }
 
     public void VolumeOnOff(bool on)
@@ -44,8 +43,8 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            MusicVolumeChanged(0f);
-            EffectsVolumeChanged(0f);
+            MusicVolumeChanged(-80f);
+            EffectsVolumeChanged(-80f);
         }
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,10 +13,9 @@ public class GameManager : MonoBehaviour
 
     private int score;
 
-
     private void Start()
     {
-        fixedDeltaTimeInit = Time.fixedDeltaTime;
+        fixedDeltaTimeInit = 0.02f;
         score = 0;
         paused = false;
         uiManager.quitButton.onClick.AddListener(Quit);
@@ -33,7 +32,11 @@ public class GameManager : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit(); // 어플리케이션 종료
+#endif
     }
 
     public void Resume(bool button = false)
@@ -43,22 +46,27 @@ public class GameManager : MonoBehaviour
             paused = false;
             
             Time.timeScale = 1f;
-            Time.fixedDeltaTime = fixedDeltaTimeInit;
         }
         else
         {
             paused = true;
+
             Time.timeScale = 0f;
-            Time.fixedDeltaTime = 0f;
         }
         uiManager.Pause(paused);
 
-        input.enabled = paused;
+        input.enabled = !paused;
     }
     
     public void AddScore(int add)
     {
         score += add;
         uiManager.UpdateScoreText(score);
+    }
+
+    public IEnumerator OnDie()
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eabe6a1187886740ba8fd9c03956f28, type: 3}
   m_Name: Bear Data
   m_EditorClassIdentifier: 
-  hurtSound: {fileID: 8300000, guid: fce027b40770a44298a6f5a4233bfb04, type: 3}
-  dieSound: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
+  hurtSound: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
+  dieSound: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
   hp: 100
   damage: 20
   speed: 2
+  attackRate: 1

@@ -13,5 +13,6 @@ public class EnemyData : ScriptableObject
     public float speed = 2f;
 
     public float attackRate = 1f;
-    internal AudioClip hitSound;
+
+    public int score = 10;
 }

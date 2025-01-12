@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
         var pos = transform.position;
         pos += input.Move * speed * Time.deltaTime;
         rb.MovePosition(pos);
-
+        rb.velocity = Vector3.zero;
 
         var look = input.MousePosition - transform.position;
 

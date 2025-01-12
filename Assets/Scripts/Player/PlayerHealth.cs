@@ -19,7 +19,8 @@ public class PlayerHealth : LivingEntity
 
     private float lastHitTime;
 
-    private UIManager manager;
+    private GameManager gameManager;
+    private UIManager uiManager;
 
     private void Awake()
     {
@@ -33,17 +34,29 @@ public class PlayerHealth : LivingEntity
     {
         base.OnEnable();
 
-        if (manager == null)
+        if (gameManager == null)
         {
-            manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().uiManager;
+            gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        }
+        if (uiManager == null)
+        {
+            uiManager = gameManager.uiManager;
         }
 
-        manager.UpdateHpBar(Hp / maxHp);
+        uiManager.UpdateHpBar(Hp / maxHp);
 
         playerMove.enabled = true;
         playerShooter.enabled = true;
 
         lastHitTime = 0f;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            OnDamage(10f, Vector3.zero, Vector3.zero);
+        }
     }
 
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
@@ -57,7 +70,9 @@ public class PlayerHealth : LivingEntity
 
         base.OnDamage(damage, hitPoint, hitNormal);
 
-        manager.UpdateHpBar(Hp / maxHp);
+        uiManager.UpdateHpBar(Hp / maxHp);
+        uiManager.OnHit();
+
         if (!IsDead)
         {
             audioSource.PlayOneShot(hitSound);
@@ -66,13 +81,23 @@ public class PlayerHealth : LivingEntity
 
     public override void Die()
     {
+        if (IsDead)
+            return;
         base.Die();
+
 
         animator.SetTrigger(hashDie);
 
         audioSource.PlayOneShot(dieSound);
 
+        uiManager.OnPlayerDie();
+
         playerMove.enabled = false;
         playerShooter.enabled = false;
+    }
+
+    private void RestartLevel()
+    {
+        StartCoroutine(gameManager.OnDie());
     }
 }

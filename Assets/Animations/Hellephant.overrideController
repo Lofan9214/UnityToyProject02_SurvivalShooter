@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hellephant
+  m_Controller: {fileID: 9100000, guid: 6206d974081bdeb44b8f12545414114b, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 13ce0376db8e3984abf53f4be01d714d, type: 2}
+    m_OverrideClip: {fileID: 7400004, guid: b77f122f451a2394898a24191c26107c, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: ce2e8b42cb1d3dd4b94dd2c7614e7f76, type: 2}
+    m_OverrideClip: {fileID: 7400002, guid: b77f122f451a2394898a24191c26107c, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: d6441a66b11bfe848800bcea495c039b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b77f122f451a2394898a24191c26107c, type: 3}

@@ -12,7 +12,6 @@ public class PlayerInput : MonoBehaviour
     public Vector3 Move { get; private set; }
     public bool Fire { get; private set; }
 
-
     public Vector3 MousePosition { get; private set; }
 
     private void Update()
