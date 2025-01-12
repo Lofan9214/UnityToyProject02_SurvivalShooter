@@ -9,13 +9,11 @@ public class GameManager : MonoBehaviour
     public PlayerInput input;
 
     private bool paused;
-    private float fixedDeltaTimeInit;
 
     private int score;
 
     private void Start()
     {
-        fixedDeltaTimeInit = 0.02f;
         score = 0;
         paused = false;
         uiManager.quitButton.onClick.AddListener(Quit);
