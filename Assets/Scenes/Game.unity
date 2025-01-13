@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Follow: {fileID: 6402010862632157700}
   m_Lens:
     FieldOfView: 60.000004
-    OrthographicSize: 4.5
+    OrthographicSize: 4
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -587,8 +587,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173362219}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29604557, y: 0.000000013180045, z: -0.0000000040850097, w: 0.95517385}
-  m_LocalPosition: {x: 1.04, y: 9, z: -9.28}
+  m_LocalRotation: {x: 0.31711435, y: 0.000000010680815, z: -0.000000003571367, w: 0.9483873}
+  m_LocalPosition: {x: 1.04, y: 12, z: -14.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2021,7 +2021,7 @@ Camera:
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 1
-  orthographic size: 4.5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2045,8 +2045,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29604563, y: 0.000000013180046, z: -0.00000000408501, w: 0.95517385}
-  m_LocalPosition: {x: 1.04, y: 9, z: -9.28}
+  m_LocalRotation: {x: 0.31711438, y: 0.000000010680816, z: -0.0000000035713683, w: 0.9483873}
+  m_LocalPosition: {x: 1.04, y: 12, z: -14.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4492,7 +4492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 9, z: -10}
+  m_FollowOffset: {x: 0, y: 12, z: -13.3}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -4590,7 +4590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5069120338908774093, guid: 3114aa0102c104b4fbf9e0b14496afb0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.72
+      value: -1.47
       objectReference: {fileID: 0}
     - target: {fileID: 5069120338908774093, guid: 3114aa0102c104b4fbf9e0b14496afb0, type: 3}
       propertyPath: m_LocalRotation.w
